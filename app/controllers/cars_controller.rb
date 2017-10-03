@@ -3,6 +3,10 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
 
+  def new
+    @car = Car.new
+  end
+
   def create
     car = Car.new(
                   year: params[:year],
@@ -13,4 +17,10 @@ class CarsController < ApplicationController
     car.save 
     redirect_to "/cars/#{car.id}"
   end
+
+  def show
+    @cars = Car
+    
+  end
 end
+
