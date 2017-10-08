@@ -1,26 +1,5 @@
-<h1>Car Showstopper</h1>
 
 <% @cars.each do |car| %>
-  <h2><a href="<%= car.year %>"></a></h2> 
-  <h2><a href="<%= car.make %>"></a></h2> 
-  <h2><a href="<%= car.model %>"></a></h2> 
+  <h2><a href="/cars/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model %></a></h2> 
 <% end %>
 
-
-<%= form_tag '/cars', method: :post do %>
-  <div>
-    Year: <input type="text" name="year">
-  </div>
-    <div>
-    Make: <input type="text" name="make">
-  </div>
-    <div>
-    Model: <input type="text" name="model">
-  </div>
-    <div>
-    Style: <input type="text" name="style">
-  </div>
-    <div>
-      <input type="submit" value="Save Car">
-  </div>
-<% end %>
