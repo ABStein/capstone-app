@@ -6,6 +6,19 @@
 <% end %>
 
 <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
-<%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %> 
+<%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %>  
+<% if current_user && !@is_car_favorited %>
+  <%= form_tag '/favorite_cars', method: :post do %>
+      <div>
+          <input type="hidden" name="car_id" value="<%= @car.id %>">
+        </div>
+      <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
+  <% end %> 
 
+  <% elsif current_user && @is_car_favorited %>
+  <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete, class: "fa fa-star" %>
+    
 
+  <% else %>
+  Please <a href="/login"> Login</a>
+<% end %>
