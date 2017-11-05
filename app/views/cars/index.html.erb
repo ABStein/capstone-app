@@ -1,5 +1,146 @@
+<!-- Intro -->
+<section id="intro" class="intro">
+  <!-- Static Intro -->
+  <div class="bg-image dark-bg overlay-dark40 parallax parallax-background2" data-background-img="img/full/porcshe.jpg">
+    <div class="container js-fullscreen-height">
+      <div class="intro-content">
+        <div class="intro-content-inner">
+          <h5 class="alt-title intro-sub-title"></h5>
+          <h1 class="intro-title-sm">CarSaavy helps you<span class="text-rotate yellow"> Know, Understand, Love</span><br/>
+            the car of your dreams.<br>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Static Intro -->
+</section>
+<!-- End Intro -->
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section-padding">
+
+            <!-- Portfolio -->
+            <div class="container">
+                <ul class="portfolio-filter categories-filter">
+                    <li><a data-filter="*" class="categories active">All</a></li>
+                    <li><a data-filter=".branding" class="categories">Branding</a></li>
+                    <li><a data-filter=".creative" class="categories">Creative</a></li>
+                    <li><a data-filter=".photography" class="categories">Photography</a></li>
+                    <li><a data-filter=".coffee" class="categories">coffee</a></li>
+                </ul>
+
+                <div class="rows portfolio-grid gallery-popup">
+
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-item photography creative wow fadeInUp">
+                        <div class="portfolio-box">
+                            <a class="porfolio-popup gallery-popup-link" href="img/portfolio/large/01.jpg" title="Portfolio Image 01">
+                                <div class="portfolio-image-wrap">
+                                    <img src="img/portfolio/thumb/01.jpg" alt="" />
+                                </div>
+                                <div class="portfolio-caption-mask">
+                                    <div class="portfolio-caption-text">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5 class="alt-title">Simple Portfolio Title</h5>
+                                            <p>Landscape</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
+
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-item branding photography coffee wow fadeInUp">
+                        <div class="portfolio-box">
+                            <a class="porfolio-popup gallery-popup-link" href="img/portfolio/large/02.jpg" title="Portfolio Image 02">
+                                <div class="portfolio-image-wrap">
+                                    <img src="img/portfolio/thumb/02.jpg" alt="" />
+                                </div>
+                                <div class="portfolio-caption-mask">
+                                    <div class="portfolio-caption-text">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5 class="alt-title">Simple Portfolio Title</h5>
+                                            <p>People</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
+
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-item branding creative coffee wow fadeInUp">
+                        <div class="portfolio-box">
+                            <a class="porfolio-popup gallery-popup-link" href="img/portfolio/large/03.jpg" title="Portfolio Image 03">
+                                <div class="portfolio-image-wrap">
+                                    <img src="img/portfolio/thumb/03.jpg" alt="" />
+                                </div>
+                                <div class="portfolio-caption-mask">
+                                    <div class="portfolio-caption-text">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5 class="alt-title">Simple Portfolio Title</h5>
+                                            <p>Cloud Hill</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
+
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-item branding wow fadeInUp">
+                        <div class="portfolio-box">
+                            <a class="porfolio-popup gallery-popup-link" href="img/portfolio/large/04.jpg" title="Portfolio Image 04">
+                                <div class="portfolio-image-wrap">
+                                    <img src="img/portfolio/thumb/04.jpg" alt="" />
+                                </div>
+                                <div class="portfolio-caption-mask">
+                                    <div class="portfolio-caption-text">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5 class="alt-title">Simple Portfolio Title</h5>
+                                            <p>people</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
+
+                    <!-- Portfolio Item -->
+                    <div class="portfolio-item branding photography coffee wow fadeInUp">
+                        <div class="portfolio-box">
+                            <a class="porfolio-popup gallery-popup-link" href="img/portfolio/large/05.jpg" title="Portfolio Image 05">
+                                <div class="portfolio-image-wrap">
+                                    <img src="img/portfolio/thumb/05.jpg" alt="" />
+                                </div>
+                                <div class="portfolio-caption-mask">
+                                    <div class="portfolio-caption-text">
+                                        <div class="portfolio-caption-tb-cell">
+                                            <h5 class="alt-title">Simple Portfolio Title</h5>
+                                            <p>Landscape</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Portfolio Item -->
+
+                </div>
+
+            </div>
+            <!-- End Portfolio -->
+
+        </section>
+        <!-- End Portfolio Section -->
 
 <% @cars.each do |car| %>
-  <h2><a href="/cars/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model %></a></h2> 
+<h2><a href="/cars/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model %></a></h2> 
 <% end %>
 

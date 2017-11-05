@@ -27,6 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem "font-awesome-rails"
+gem 'figaro'
+gem 'google-cloud-vision'
+gem 'googleauth'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,9 +1,18 @@
-<h1><%= @car.year %> <%= @car.make %> <%= @car.model %></h1>
-<h2><%= @car.style %></h2>
+<h1><%= @car.title %></h1>
+<ul>
+  <li><h3>Engine Type: <%= @car.engine %></h3></li>
+  <li><h3>Dirvetrain: <%= @car.drive_type %></h3></li>
+  <li><h3>Transmission: <%= @car.transmission_type %></h3></li>
+</ul>
+
+
 
 <% @car.bids.each do |bid| %>
-  <h2>Price: <%= bid.price %> Vendor: <%= bid.vendor %></h2>
+  <h4>Price: <%= bid.price %> Vendor: <%= bid.vendor %></h4>
 <% end %>
+
+
+
 
 <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
 <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %>  
