@@ -1,3 +1,4 @@
+<div class="container cars-container" style="padding-top: 70px">
 <h1><%= @car.title %></h1>
 <ul>
   <li><h3>Engine Type: <%= @car.engine %></h3></li>
@@ -5,29 +6,22 @@
   <li><h3>Transmission: <%= @car.transmission_type %></h3></li>
 </ul>
 
+  <% @car.bids.each do |bid| %>
+    <h4>Price: <%= bid.price %> Vendor: <%= bid.vendor %></h4>
+  <% end %>
 
-
-<% @car.bids.each do |bid| %>
-  <h4>Price: <%= bid.price %> Vendor: <%= bid.vendor %></h4>
-<% end %>
-
-
-
-
-<%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
-<%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %>  
-<% if current_user && !@is_car_favorited %>
-  <%= form_tag '/favorite_cars', method: :post do %>
-      <div>
-          <input type="hidden" name="car_id" value="<%= @car.id %>">
-        </div>
-      <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
-  <% end %> 
-
+  <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
+  <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %>  
+  <% if current_user && !@is_car_favorited %>
+    <%= form_tag '/favorite_cars', method: :post do %>
+        <div>
+            <input type="hidden" name="car_id" value="<%= @car.id %>">
+          </div>
+        <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
+    <% end %>
   <% elsif current_user && @is_car_favorited %>
-  <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete, class: "fa fa-star" %>
-    
-
+      <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete, class: "fa fa-star" %> 
   <% else %>
-  Please <a href="/login"> Login</a>
-<% end %>
+    Please <a href="/login"> Login</a>
+  <% end %>
+</div>

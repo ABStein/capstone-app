@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
-  def index
-    @cars = Car.all
+  def index 
+    @cars = Unirest.post("#{ ENV['HOST_NAME'] }/v1/images:annotate?key=#{ ENV['GOOGLE_APPLICATION_CREDENTIALS'] }").body
   end
 
   def new
@@ -33,7 +33,7 @@ class CarsController < ApplicationController
         end
       end
     else
-      flash[:warning] = "Please Login"
+      # flash[:warning] = "Please Login"
       redirect_to '/login'
     end
 
@@ -53,14 +53,14 @@ class CarsController < ApplicationController
                            )
 
     @car.save
-    flash[:success] = "Successfully Updated Car"
+    # flash[:success] = "Successfully Updated Car"
     redirect_to "/cars/#{@car.id}"  
   end
 
   def destroy
     @car = Car.find(params[:id])
     @car.destroy
-    flash[:warning] = "Car Deleted"
+    # flash[:warning] = "Car Deleted"
     redirect_to "/"
   end
 end

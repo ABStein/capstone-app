@@ -6,23 +6,25 @@ class FavoriteCarsController < ApplicationController
     
   end
 
+  def new
+  end
+
   def create
     favorite_car = FavoriteCar.new(
-                                    user_id: current_user.id,
-                                    car_id: params[:car_id]
-                                    )
+                                   user_id: current_user.id,
+                                   car_id: params[:car_id],
+                                   year: params[:year], 
+                                   make: params[:make],
+                                   model: params[:model]
+                                  )
 
     favorite_car.save
-    p 'NEW FAVORITE CAR CREATED!'
-    p favorite_car.car_id
-    p 'current user id'
-    p current_user.id
   end
 
   def destroy
     @favorite_car = FavoriteCar.find(params[:id])
+
     @favorite_car.destroy
-    flash[:warning] = "Removed From Favorites"
-    redirect_to "/"
+    redirect_to "/favorite_car/#{car.id}"
   end
 end

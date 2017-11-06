@@ -18,6 +18,4 @@ Rails.application.routes.draw do
   get '/favorite_cars' => 'favorite_cars#index'
   post '/favorite_cars' => 'favorite_cars#create' 
   delete '/favorite_cars/:id' => 'favorite_cars#destroy'
-
-
 end
