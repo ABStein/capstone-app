@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   patch '/cars/:id' => 'cars#update'
   delete '/cars/:id' => 'cars#destroy'
 
+  get '/all_cars' => 'all_cars#display_cars'
+
   get '/signup' => "users#new"
   post '/users' => "users#create"
 

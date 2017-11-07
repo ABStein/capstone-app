@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Apollo - Multiprapose Onepage Template</title>
+    <title>CarSaavy</title>
     <meta name="description" content="" />
     <meta name="keywords" content="creative, portfolio, agency, template, theme, designed, html5, html, css3, responsive, apollo, onepage" />
     <meta name="author" content="nileforest">
@@ -49,21 +49,25 @@
                 <ul class="overlay-menu-nav">
                 <% if current_user %>
                     <li>
+                        <a href="/"></a>
+                    </li>                    
+                    <li>
                         <a class="external" href="/logout">Logout</a></li>
                     <li>
-                        <a class="external" href="/cars/news">Add New Car</a>
+                        <a class="external" href="/cars/new">Add New Car</a>
                     </li>
                     <% else %>
-                    <li>
-                        <a class="external" href="/signup">Sign Up</a>
-                    </li>
+
                     <li>
                         <a class="external" href="/login">Login</a>
                     </li>
                     <% end %>
                     <li role="separator" class="divider"></li>
-                    <li><a href="/favorite_cars">My Favorite</a>
+                    <li><a href="/favorite_cars">My Favorites</a>
                     <li><a href="/car_upload">Upload a car</a></li>
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/all_cars">Find A Car</a></li>
+
                     </li>
                 </ul>
             </nav>
@@ -114,14 +118,6 @@
 
             <!-- Portfolio -->
             <div class="container">
-                <ul class="portfolio-filter categories-filter">
-                    <li><a data-filter="*" class="categories active">All</a></li>
-                    <li><a data-filter=".branding" class="categories">Branding</a></li>
-                    <li><a data-filter=".creative" class="categories">Creative</a></li>
-                    <li><a data-filter=".photography" class="categories">Photography</a></li>
-                    <li><a data-filter=".coffee" class="categories">coffee</a></li>
-                </ul>
-
                 <div class="rows portfolio-grid gallery-popup">
 
 
@@ -178,8 +174,7 @@
                     </li>
                 </ul>
                 <p class="copyright">
-                    <a class="copy-link scroll-top" href="">&copy; Apollo 2016</a><br />
-                    All Rights Reserved, Template by <a target="_blank" href="http://nileforest.com/"><b>nileforest</b></a>
+                    <a class="copy-link scroll-top" href="">&copy; CarSaavy 2017</a><br/>
                 </p>
             </div>
         </footer>

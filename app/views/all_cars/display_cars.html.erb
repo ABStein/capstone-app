@@ -1,0 +1,10 @@
+<div>
+  <h2>Find A Car</h2>
+  <% @cars.each do |car| %>
+    <h3><a href="/cars/<%= car.id %>"><%= car.year %> <%= car.make %> <%= car.model %></a></h3> 
+  <% end %>
+</div>
+
+
+
+<!-- style="margin-top: 50px;" -->

@@ -79,7 +79,7 @@ body {
     padding: 0;
 }
 
-#page-wraper {
+page-wraper {
     position: relative;
     width: 100%;
 }

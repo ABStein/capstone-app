@@ -1,9 +1,16 @@
 <div style="margin-top: 300px;">
   <h1>Upload Your Car Image</h1>
-
+  <div>
   <%= form_tag "/google_vision", method: :post do %>
       <input type="text" name="image_link">
       <input type="file" name="image_file">
       <input type="submit" value="Check Image">
   <% end %>
+  </div>
 </div>
+
+
+
+
+
+<!--  style="margin-top: 300px;" -->
