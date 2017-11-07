@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index 
-    @cars = Unirest.post("#{ ENV['HOST_NAME'] }/v1/images:annotate?key=#{ ENV['GOOGLE_APPLICATION_CREDENTIALS'] }").body
+    @car = Car.all
   end
 
   def new
@@ -33,7 +33,6 @@ class CarsController < ApplicationController
         end
       end
     else
-      # flash[:warning] = "Please Login"
       redirect_to '/login'
     end
 
