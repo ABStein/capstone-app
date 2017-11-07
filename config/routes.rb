@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   get '/favorite_cars' => 'favorite_cars#index'
   post '/favorite_cars' => 'favorite_cars#create' 
   delete '/favorite_cars/:id' => 'favorite_cars#destroy'
+
+  get '/car_upload' => 'google_vision#upload_car'
+  post '/google_vision' => 'google_vision#process_image'
+
 end

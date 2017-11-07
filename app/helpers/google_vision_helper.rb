@@ -1,0 +1,2 @@
+module GoogleVisionHelper
+end
