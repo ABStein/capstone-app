@@ -23,5 +23,6 @@ Rails.application.routes.draw do
 
   get '/car_upload' => 'google_vision#upload_car'
   post '/google_vision' => 'google_vision#process_image'
+  get '/file_upload' => 'google_vision#file_path'
 
 end
