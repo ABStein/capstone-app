@@ -71,8 +71,11 @@ class GoogleCloudService
   end
 
   def self.web_results(response)
-    return [] unless response["responses"][0]["webDetection"]["webEntities"]
-    response["responses"][0]["webDetection"]["webEntities"].map { |pic| pic["description"] }
+    begin
+      response["responses"][0]["webDetection"]["webEntities"].map { |pic| pic["description"] }
+    rescue
+      []
+    end
   end
 
   def self.label_web_results(response)
@@ -82,18 +85,20 @@ class GoogleCloudService
 
   def self.image_to_cars(image_path, image_type)
     potential_car_names = send_image(image_path, image_type).compact
-    db_makes = Car.pluck(:make)
-    # start with: you have an array of car makes that ARE in the db
-    # end with: a list of car objects from the db
-
-    # 1 map split flatten uniq
-    # 2
-    # 3
-
     split_car_names = potential_car_names.map { |potential_car_name| potential_car_name.split }
     official_car_names = split_car_names.flatten
-    api_data_keywords = official_car_names.uniq
-    found_db_makes = api_data_keywords & db_makes # this returns an array of strings that are makes in the db
-    car_query = found_db_makes.map { |found_db_make| Car.where(make: found_db_make ) }
+    api_data_keywords = official_car_names.uniq.map {|word| word.titleize }
+    # db_makes = Car.pluck(:make)
+    # found_db_makes = api_data_keywords & db_makes # this returns an array of strings that are makes in the db
+    # car_query = found_db_makes.map { |found_db_make| Car.where(make: found_db_make ) }
+
+    cars = Car.where(make: api_data_keywords, model: api_data_keywords)
+    cars_with_year = cars.where(year: api_data_keywords)
+
+    if cars_with_year.any?
+      cars_with_year
+    else
+      cars
+    end
   end
 end

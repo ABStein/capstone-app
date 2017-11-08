@@ -1,3 +1,10 @@
-<%= @results %>
+<% @results.each do |car| %>
+  <%= car.make %>
+  <%= car.model %>
+  <%= car.year %>
+  <br>
+<% end %>
+
+
 
 
