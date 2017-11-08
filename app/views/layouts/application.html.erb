@@ -57,75 +57,33 @@
     </section>
     <!-- End Site preloader -->
 
-    <!-- Overlay Menu --------------------------------------------------->
-    <div class="overlay-menu">
-        <!-- Overlay Menu Close Icon -->
-        <a class="overlay-menu-close">
-            <span></span>
-        </a>
-        <!-- End Overlay Menu Close Icon -->
 
-        <!-- Overlay Menu Nav -->
-        <div class="overlay-menu-inner">
-            <nav class="">
-                <ul class="overlay-menu-nav">
-                <% if current_user %>
-                    <li>
-                        <a href="/"></a>
-                    </li>                    
-                    <li>
-                        <a class="external" href="/logout">Logout</a></li>
-                    <li>
-                        <a class="external" href="/cars/new">Add New Car</a>
-                    </li>
-                    <% else %>
 
-                    <li>
-                        <a class="external" href="/login">Login</a>
-                    </li>
-                    <% end %>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="/favorite_cars">My Favorites</a>
-                    <li><a href="/car_upload">Upload a car</a></li>
-                    <li><a href="/">Homepage</a></li>
-                    <li><a href="/all_cars">Find A Car</a></li>
-
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <!-- End Overlay Menu Nav -->
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <% if current_user %>
+            <li><a href="/"></a></li>                    
+            <li><a href="/favorite_cars">My Favorites</a></li>
+            <li><a class="external" href="/logout">Logout</a></li>
+            <li><a class="external" href="/cars/new">Add New Car</a></li>
+        <% else %>
+            <li><a class="external" href="/login">Login</a></li>
+        <% end %>
+            <li role="separator" class="divider"></li>
+            <li><a href="/car_upload">Upload A car</a></li>
+            <li><a href="/all_cars">Find A Car</a></li>
+            <li><a href="/">Homepage</a></li>
+      </ul>
     </div>
-    <!-- End Overlay Menu -->
+
 
 
     <!-- Page Wraper -------------------------------------------------------->
     <div id="page-wraper">
 
-        <!-- Header -->
-        <header id="header" class="header header-light">
-            <div class="container header-inner">
-
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="/cars">
-                       <h3 class="nav-logo">
-                           CarSaavy
-                       </h3>
-                    </a>
-                </div>
-                <!-- End Logo -->
-
-                <!-- Overlay menu btn Icon -->
-                <div class="overlay-menu-btn nav-bar-icon">
-                    <span></span>
-                </div>
-                <!-- Overlay menu btn Icon -->
-
-
-            </div>
-        </header>
-        <!-- End Header -->
 
         <% flash.each do |type, message| %>
         <div class="alert alert-warning alert-dismissible" role="alert">
@@ -152,7 +110,7 @@
                             <div class="alt-icon-top">
                                 <i class="icon-phone"></i>
                             </div>
-                            <p class="large">+40 (0) 012 345 6789</p>
+                            <p class="large">1-(574)-299-6225</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 mb-sm-30">
@@ -161,8 +119,8 @@
                                 <i class="icon-map-pin"></i>
                             </div>
                             <p class="large">
-                                250 South Street Baldwin,<br>
-                                NY 11510
+                                215 W Ohio St. Chicago,<br>
+                                 IL 60654
                             </p>
                         </div>
                     </div>
@@ -171,7 +129,7 @@
                             <div class="alt-icon-top">
                                 <i class="icon-envelope"></i>
                             </div>
-                            <p class="large">yourname@domain.com</p>
+                            <p class="large">welovecars@CarSaavy.com</p>
                         </div>
                     </div>
                 </div>
