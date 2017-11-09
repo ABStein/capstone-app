@@ -1,4 +1,4 @@
 
 <% @favorite_cars.each do |favorite_car| %>
-  <h2><%= "#{favorite_car.car.year} #{favorite_car.car.make} #{favorite_car.car.model}" %></h2>
+  <h2><a href="/cars/<%= favorite_car.car_id %>"%> <%= favorite_car.car.title %></a></h2>
 <% end %>

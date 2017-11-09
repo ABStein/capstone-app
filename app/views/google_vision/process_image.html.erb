@@ -1,9 +1,9 @@
 <% @results.each do |car| %>
-  <%= car.make %>
-  <%= car.model %>
-  <%= car.year %>
+  <h3>Result: <a href="/cars/<%= car.id %>"> <%= car.title %></a></h3>
+  <h4>Cheapest Bid: <%= number_to_currency(car.cheapest_bid.price) %></h4>
   <br>
 <% end %>
+
 
 
 

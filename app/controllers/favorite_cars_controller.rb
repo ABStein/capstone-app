@@ -25,6 +25,6 @@ class FavoriteCarsController < ApplicationController
     @favorite_car = FavoriteCar.find(params[:id])
 
     @favorite_car.destroy
-    redirect_to "/favorite_car/#{car.id}"
+    redirect_to "/favorite_cars"
   end
 end

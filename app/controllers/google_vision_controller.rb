@@ -8,12 +8,17 @@ class GoogleVisionController < ApplicationController
   def process_image 
     if params[:image_link].present?
       @results = GoogleCloudService.image_to_cars(params[:image_link], 'link')
-      p @results
     else 
-      p "FILE PARAMS:"
-      p params[:image_file]
       image_file = File.open(params[:image_file])
       @results = GoogleCloudService.send_image(image_file, 'file')
+    end
+
+    if @results.length == 1
+      car = @results.first
+      redirect_to "/cars/#{car.id}"
+    elsif @results.length == 0
+      flash[:success] = "Try a different image :o)"
+      redirect_to "/car_upload"
     end
   end
 
