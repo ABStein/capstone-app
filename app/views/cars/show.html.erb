@@ -1,13 +1,19 @@
-<div class="container cars-container" style="padding-top: 70px">
+<div class="container cars-container">
 <h1><%= @car.title %></h1>
 <ul>
   <li><h3>Engine Type: <%= @car.engine %></h3></li>
   <li><h3>Dirvetrain: <%= @car.drive_type %></h3></li>
   <li><h3>Transmission: <%= @car.transmission_type %></h3></li>
+  <li><h3>Style: <%= @car.style %></h3></li>
+  <br>
 </ul>
 
+<h1>Prices Found</h1>
+
   <% @car.bids.each do |bid| %>
-    <h4>Price: <%= bid.price %> Vendor: <%= bid.vendor %></h4>
+    <ul>
+      <li><h4>Price: <%= number_to_currency(bid.price) %> Vendor: <%= bid.vendor %></h4></li>
+    </ul>
   <% end %>
 
   <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>

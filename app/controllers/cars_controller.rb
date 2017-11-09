@@ -43,17 +43,20 @@ class CarsController < ApplicationController
   end
 
   def update 
-    @car = Car.find(params[:id])
+    @car = Car.find_by(id: params[:id])
+    
     @car.assign_attributes(
                            year: params[:year],
                            make: params[:make],
                            model: params[:model],
                            style: params[:style]
                            )
-
-    @car.save
-    # flash[:success] = "Successfully Updated Car"
-    redirect_to "/cars/#{@car.id}"  
+    if @car.save
+      flash[:success] = "Car successfully updated"
+      redirect_to "/cars/#{@car.id}"
+    end
+    # @car.save
+    # redirect_to "/cars/#{@car.id}"  
   end
 
   def destroy

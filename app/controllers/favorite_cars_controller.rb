@@ -3,6 +3,9 @@ class FavoriteCarsController < ApplicationController
 
   def index
     @favorite_cars = current_user.favorite_cars
+    #ALSO YOUR UPDATE CAR DOES NOT WORK
+    #MAKE SURE TO DO SOMETHING FOR YOUR PAGE HERE SAYING OH NO YOU HAVE NO FAVORITE CARS!
+
     
   end
 
@@ -19,6 +22,8 @@ class FavoriteCarsController < ApplicationController
                                   )
 
     favorite_car.save
+    redirect_to "/favorite_cars"
+    flash[:success] = "Added to your favorites!"
   end
 
   def destroy
