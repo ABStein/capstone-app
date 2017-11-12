@@ -2,15 +2,6 @@
 
 <%= form_tag "/cars/#{@car.id}", method: :patch do %>
   <div>
-    Year: <input type="text" name="year" value="<%= @car.year %>">
-  </div>
-  <div>
-    Make: <input type="text" name="make" value="<%= @car.make %>">
-  </div>
-  <div>
-    Model: <input type="text" name="model" value="<%= @car.model %>">
-  </div>
-  <div>
     Style: <input type="text" name="style" value="<%= @car.style %>">
   </div>
     <div>

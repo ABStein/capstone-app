@@ -76,10 +76,10 @@ body {
     font-weight: 400;
     line-height: 1.6;
     margin: 0;
-    padding: 65px;
+    padding: 0;
 }
 
-page-wraper {
+#page-wraper {
     position: relative;
     width: 100%;
 }
@@ -145,19 +145,19 @@ page-wraper {
     background-size: cover;
     display: block;
     overflow: hidden;
-    position: fixed;
+    position: relative;
     width: 100%;
 }
 
 .overlay-dark, .overlay-dark20, .overlay-dark30, .overlay-dark40, .overlay-dark60, .overlay-dark80, .overlay-dark90, .overlay-light, .overlay-light80 {
-    position: fixed;
+    position: relative;
     z-index: 1;
 }
 
     .overlay-dark:before, .overlay-dark20:before, .overlay-dark30:before, .overlay-dark40:before, .overlay-dark60:before, .overlay-dark80:before, .overlay-dark90:before, .overlay-light:before, .overlay-light80:before {
         left: 0;
         top: 0;
-        position: fixed;
+        position: absolute;
         width: 100%;
         height: 100%;
         content: "";

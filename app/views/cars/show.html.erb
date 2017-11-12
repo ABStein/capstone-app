@@ -15,19 +15,39 @@
       <li><h4>Price: <%= number_to_currency(bid.price) %> Vendor: <%= bid.vendor %></h4></li>
     </ul>
   <% end %>
-
-  <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
-  <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %>  
-  <% if current_user && !@is_car_favorited %>
+  <br>
+  
+  <% if current_user && !@is_car_favorited && current_user.admin %>
     <%= form_tag '/favorite_cars', method: :post do %>
         <div>
+          <input type="hidden" name="car_id" value="<%= @car.id %>">
+        </div>
+      <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
+    <% end %>
+
+    <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
+    <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %> 
+  <% elsif current_user && @is_car_favorited && current_user.admin %>
+      <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete, class: "fa fa-star" %> 
+
+  <% elsif current_user && !@is_car_favorited %>
+      <%= form_tag '/favorite_cars', method: :post do %>
+          <div>
             <input type="hidden" name="car_id" value="<%= @car.id %>">
           </div>
         <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
+      <% end %> 
     <% end %>
-  <% elsif current_user && @is_car_favorited %>
+
+    <% if current_user && @is_car_favorited %>
       <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete, class: "fa fa-star" %> 
-  <% else %>
-    Please <a href="/login"> Login</a>
-  <% end %>
+    <% elsif !current_user && !@is_car_favorited %>
+      <a href="/login">Please Login</a>
+    <% end %>
+
+    <%= link_to "Dealers Near You!", "https://www.google.com/maps/search/#{@car.make} Dealers", class: "btn btn-success", target: "_blank" %>
 </div>
+
+
+
+

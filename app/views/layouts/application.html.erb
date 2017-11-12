@@ -64,14 +64,19 @@
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <% if current_user %>
+        <% if current_user && current_user.admin %>
             <li><a href="/"></a></li>                    
             <li><a href="/">Homepage</a></li>
             <li><a href="/favorite_cars">My Favorites</a></li>
             <li><a class="external" href="/logout">Logout</a></li>
             <li><a class="external" href="/cars/new">Add New Car</a></li>
+        <% elsif current_user %>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/favorite_cars">My Favorites</a></li>
+            <li><a class="external" href="/logout">Logout</a></li>
         <% else %>
             <li><a class="external" href="/login">Login</a></li>
+            <li><a class="external" href="/signup">Create An Account</a></li>                                           
         <% end %>
             <li role="separator" class="divider"></li>
             <li><a href="/car_upload">Upload A car</a></li>
@@ -101,6 +106,8 @@
                 <div class="rows portfolio-grid gallery-popup">
 
 
+        <!-- Footer Section -->
+        <footer id="footer" class="footer gray-bg">
         <!-- Contact Infobar Section -->
         <section id="contact-us" class="section-padding text-center">
             <div class="container">
@@ -136,8 +143,6 @@
             </div>
         </section>
         <!-- End Contact Infobar Section -->
-        <!-- Footer Section -->
-        <footer id="footer" class="footer gray-bg">
             <div class="container text-center">
                 <ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
                     <li>

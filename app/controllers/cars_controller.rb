@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   def index 
     @cars = Car.all
   end
@@ -12,7 +13,9 @@ class CarsController < ApplicationController
                   year: params[:year],
                   make: params[:make],
                   model: params[:model],
-                  style: params[:style]
+                  style: params[:style],
+                  drive_type: params[:drive_type],
+                  transmission_type: params[:transmission_type]
                   )
     car.save 
     redirect_to "/cars/#{car.id}"
@@ -39,7 +42,7 @@ class CarsController < ApplicationController
   end
 
   def edit 
-    @car = Car.find(params[:id])   
+    @car = Car.find(params[:id])
   end
 
   def update 
@@ -49,7 +52,10 @@ class CarsController < ApplicationController
                            year: params[:year],
                            make: params[:make],
                            model: params[:model],
-                           style: params[:style]
+                           style: params[:style],
+                           engine: params[:engine],
+                           drive_type: params[:drive_type],
+                           transmission_type: params[:transmission_type]
                            )
     if @car.save
       flash[:success] = "Car successfully updated"
