@@ -2,6 +2,7 @@ class CarsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   def index 
     @cars = Car.all
+    @home_page = true
   end
 
   def new

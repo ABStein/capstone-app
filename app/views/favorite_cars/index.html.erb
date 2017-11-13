@@ -1,4 +1,4 @@
-
+<h1>My Favorites</h1>
 <% @favorite_cars.each do |favorite_car| %>
   <h2><a href="/cars/<%= favorite_car.car_id %>"%> <%= favorite_car.car.title %></a></h2>
 <% end %>

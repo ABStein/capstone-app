@@ -20,3 +20,24 @@
 input, input[type="text"] {
   text-transform: none;
 }
+
+.black-spacer {
+  height: 200px;
+}
+
+#show-image {
+  &#intro, &.bg-image, &#intro.bg-image, &#inner-intro .bg-image, &#inner-intro.bg-image {
+ background-attachment: unset;
+  }
+}
+
+#footer {
+  .footer {
+    .grey-bg{
+      .thing-smaller{
+        padding-top: 200px;
+        padding-bottom: 200px;
+      }
+    }
+  }
+}

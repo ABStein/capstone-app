@@ -30,7 +30,4 @@ class GoogleVisionController < ApplicationController
       file.puts f.read
     end
   end
-
-
-
 end

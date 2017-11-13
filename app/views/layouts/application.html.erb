@@ -57,45 +57,100 @@
     </section>
     <!-- End Site preloader -->
 
+    <!-- Overlay Menu ------------------------------------------------- -->
+    <div class="overlay-menu">
+        <!-- Overlay Menu Close Icon -->
+        <a class="overlay-menu-close">
+            <span></span>
+        </a>
+        <!-- End Overlay Menu Close Icon -->
 
-
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <% if current_user && current_user.admin %>
-            <li><a href="/"></a></li>                    
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/favorite_cars">My Favorites</a></li>
-            <li><a class="external" href="/logout">Logout</a></li>
-            <li><a class="external" href="/cars/new">Add New Car</a></li>
-        <% elsif current_user %>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/favorite_cars">My Favorites</a></li>
-            <li><a class="external" href="/logout">Logout</a></li>
-        <% else %>
-            <li><a class="external" href="/login">Login</a></li>
-            <li><a class="external" href="/signup">Create An Account</a></li>                                           
-        <% end %>
-            <li role="separator" class="divider"></li>
-            <li><a href="/car_upload">Upload A car</a></li>
-            <li><a href="/all_cars">Find A Car</a></li>
-      </ul>
+        <!-- Overlay Menu Nav -->
+        <div class="overlay-menu-inner">
+            <nav class="">
+                <ul class="overlay-menu-nav">
+                <% if current_user && current_user.admin %>
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/favorite_cars">My Favorites</a></li>
+                    <li><a class="external" href="/logout">Logout</a></li>
+                    <li><a class="external" href="/cars/new">Add New Car</a></li>
+                <% elsif current_user %>
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/favorite_cars">My Favorites</a></li>
+                    <li><a class="external" href="/logout">Logout</a></li>
+                <% else %>
+                    <li><a class="external" href="/login">Login</a></li>
+                    <li><a class="external" href="/signup">Create An Account</a></li>                                           
+                <% end %>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="/car_upload">Upload A car</a></li>
+                    <li><a href="/all_cars">Find A Car</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- End Overlay Menu Nav -->
     </div>
-
+    <!-- End Overlay Menu -->
 
 
     <!-- Page Wraper -------------------------------------------------------->
     <div id="page-wraper">
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="container header-inner">
 
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="/">
+                        <img class="logo-light" src="/img/logo-light.png" alt="CarSaavy" />
+                        <img class="logo-dark" src="/img/logo-dark.png" alt="CarSaavy" />
+                    </a>
+                </div>
+                <!-- End Logo -->
+
+                <!-- Overlay menu btn Icon -->
+                <div class="overlay-menu-btn nav-bar-icon">
+                    <span></span>
+                </div>
+                <!-- Overlay menu btn Icon -->
+
+
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Intro -->
+        <section id="intro" class="intro">
+          <!-- Static Intro -->
+            <% if @home_page %>
+                <div class="bg-image dark-bg overlay-dark40 parallax parallax-background2" data-background-img="/img/full/porcshe.jpg">
+                    <div class="container js-fullscreen-height">
+                      <div class="intro-content">
+                        <div class="intro-content-inner">
+                          <h5 class="alt-title intro-sub-title"></h5>
+                          <h1 class="intro-title-sm">CarSaavy helps you<span class="text-rotate yellow"> Know, Understand, Love</span><br/>
+                            the car of your dreams.<br>
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+            <% else %>
+                  <div id="show-image" class="bg-image dark-bg overlay-dark40 parallax parallax-background2" data-background-img="/img/full/show_image.jpg">
+                    <div class="container black-spacer">
+                    </div>
+            <% end %>
+          </div>
+          <!-- End Static Intro -->
+        </section>
+        <!-- End Intro -->
 
         <% flash.each do |type, message| %>
-        <div class="alert alert-warning alert-dismissible" role="alert">
+        <div class="alert alert-<%= type %> alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <%= message %> 
         </div>
         <% end %>
+
         <%= yield %>
 
         <!-- Portfolio Section -->
@@ -107,7 +162,7 @@
 
 
         <!-- Footer Section -->
-        <footer id="footer" class="footer gray-bg">
+        <footer id="footer" class="footer gray-bg thing-smaller">
         <!-- Contact Infobar Section -->
         <section id="contact-us" class="section-padding text-center">
             <div class="container">
@@ -117,7 +172,7 @@
                             <div class="alt-icon-top">
                                 <i class="icon-phone"></i>
                             </div>
-                            <p class="large">1-(574)-299-6225</p>
+                            <p class="large">Contact Us <br> 1-(574)-299-6225</p>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6 mb-sm-30">
@@ -126,6 +181,7 @@
                                 <i class="icon-map-pin"></i>
                             </div>
                             <p class="large">
+                                Check Out Our Digs <br>
                                 215 W Ohio St. Chicago,<br>
                                  IL 60654
                             </p>
@@ -136,7 +192,7 @@
                             <div class="alt-icon-top">
                                 <i class="icon-envelope"></i>
                             </div>
-                            <p class="large">welovecars@CarSaavy.com</p>
+                            <p class="large">Questions? <br> welovecars@CarSaavy.com</p>
                         </div>
                     </div>
                 </div>

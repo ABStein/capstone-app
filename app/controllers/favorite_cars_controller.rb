@@ -3,13 +3,10 @@ class FavoriteCarsController < ApplicationController
 
   def index
     @favorite_cars = current_user.favorite_cars
-    #ALSO YOUR UPDATE CAR DOES NOT WORK
-    #MAKE SURE TO DO SOMETHING FOR YOUR PAGE HERE SAYING OH NO YOU HAVE NO FAVORITE CARS!
-
-    
   end
 
   def new
+
   end
 
   def create
