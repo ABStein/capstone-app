@@ -1,11 +1,13 @@
 <div>
-  <h1>Upload Your Car Image</h1>
+  <h1>Upload Car</h1>
   <br>
-  <div>
-  <%= form_tag "/google_vision", method: :post do %>
-      <input type="text" name="image_link">
-      <input type="submit" value="Check Image">
-  <% end %>
+  <div class="row">
+    <%= form_tag "/google_vision", method: :post, class: "col-sm-6 col-sm-offset-3" do %>
+        <div class="form-group">
+          <input type="text" class="form-control" name="image_link" placeholder="Image URL">
+        </div>
+        <input type="submit" value="Analyze" class="btn btn-primary pull-right">
+    <% end %>
   </div>
 </div>
 

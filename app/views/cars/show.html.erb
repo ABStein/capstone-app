@@ -1,6 +1,14 @@
 
 <div class="container cars-container">
-  <h1><%= @car.title %></h1>
+<div class="car-info">
+  <h1>
+    <%= @car.title %>
+    <% if current_user && @favorite_car %>
+        <%= link_to "", "/favorite_cars/#{@favorite_car.id}", method: :delete, class: "fa fa-star gold-star" %> 
+    <% elsif current_user && !@favorite_car %>
+      <%= link_to "", "/favorite_cars/#{@car.id}", method: :post, class: "fa fa-star-o gold-star" %> 
+    <% end %>
+  </h1>
   <ul>
     <li><h3>Engine Type: <%= @car.engine %></h3></li>
     <li><h3>Dirvetrain: <%= @car.drive_type %></h3></li>
@@ -8,7 +16,9 @@
     <li><h3>Style: <%= @car.style %></h3></li>
     <br>
   </ul>
+</div>
 
+<div class="car-info">
   <h1>Prices Found</h1>
 
     <% @car.bids.each do |bid| %>
@@ -19,39 +29,17 @@
     <% end %>
     <br>
     
-    <% if current_user && !@is_car_favorited && current_user.admin %>
-      <%= form_tag '/favorite_cars', method: :post do %>
-          <div>
-            <input type="hidden" name="car_id" value="<%= @car.id %>">
-          </div>
-        <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
-      <% end %>
-
-      <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
-      <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %> 
-
-    <% elsif current_user && @is_car_favorited && current_user.admin %>
-
-        <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete%> 
+  
+</div>
+    <div class="car-buttons">
+      <% if current_user && current_user.admin %>
         <%= link_to "Edit Car", "/cars/#{@car.id}/edit", class: "btn btn-warning" %>
-        <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %>         
-
-    <% elsif current_user && !@is_car_favorited %>
-        <%= form_tag '/favorite_cars', method: :post do %>
-            <div>
-              <input type="hidden" name="car_id" value="<%= @car.id %>">
-            </div>
-          <button type="submit" class="fa fa-star-o" id="favorite-button"></button>
-        <% end %> 
+        <%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete, class: "btn btn-danger" %> 
       <% end %>
-
-      <% if current_user && @is_car_favorited %>
-        <%= link_to "", "/favorite_cars/#{@favorite_car_id}", method: :delete, class: "fa fa-star" %> 
-      <% elsif !current_user && !@is_car_favorited %>
-        <a href="/login">Please Login</a>
-      <% end %>
-
+    </div>
+    <div class="car-buttons">
       <%= link_to "Dealers Near You!", "https://www.google.com/maps/search/#{@car.make} Dealers", class: "btn btn-success", target: "_blank" %>
+    </div>
 </div>
 
 

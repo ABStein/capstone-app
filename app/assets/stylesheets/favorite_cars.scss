@@ -1,6 +1,6 @@
-#favorite-button, .fa-star {
+#favorite-button, a.fa-star, a.fa-star-o {
   border: none;
-  font-size: 30px !important;
+  font-size: 30px ;
   color: gold;
   background-color: transparent;
   &:hover{

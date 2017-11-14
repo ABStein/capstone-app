@@ -84,7 +84,7 @@
                 <% end %>
                     <li role="separator" class="divider"></li>
                     <li><a href="/car_upload">Upload A car</a></li>
-                    <li><a href="/all_cars">Find A Car</a></li>
+
                 </ul>
             </nav>
         </div>
@@ -150,7 +150,7 @@
             <%= message %> 
         </div>
         <% end %>
-       <div class="container" id="main-content">
+       <div class="container <%= "content-background" unless @home_page %>" id="main-content">
             <%= yield %>
         </div>
 

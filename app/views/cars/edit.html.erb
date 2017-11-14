@@ -1,18 +1,20 @@
 <h1>Edit a Car</h1>
 
-<%= form_tag "/cars/#{@car.id}", method: :patch do %>
-  <div>
-    Style: <input type="text" name="style" value="<%= @car.style %>">
-  </div>
-    <div>
-    Engine: <input type="text" name="engine" value="<%= @car.engine %>">
-  </div>
-  <div>
-    Drive-type: <input type="text" name="drive_type" value="<%= @car.drive_type %>">
-  </div>
-  <div>
-    Transmission-type: <input type="text" name="transmission_type" value="<%= @car.transmission_type %>">
-  </div>
+<div class="row">
+  <%= form_tag "/cars/#{@car.id}", method: :patch, class: "col-sm-6 col-sm-offset-3" do %>
+    <div class="form-group">
+      Style: <input class="form-control" type="text" name="style" value="<%= @car.style %>">
+    </div>
+    <div class="form-group">
+      Engine: <input class="form-control" type="text" name="engine" value="<%= @car.engine %>">
+    </div>
+    <div class="form-group">
+      Drive-type: <input class="form-control" type="text" name="drive_type" value="<%= @car.drive_type %>">
+    </div>
+    <div class="form-group">
+      Transmission-type: <input class="form-control" type="text" name="transmission_type" value="<%= @car.transmission_type %>">
+    </div>
 
-  <input class="btn btn-success" type="submit" value="Update Car">
-<% end %>
+    <input class="btn btn-primary pull-right car-buttons" type="submit" value="Update Car">
+  <% end %>
+</div>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/logout' => "sessions#destroy"
 
   get '/favorite_cars' => 'favorite_cars#index'
-  post '/favorite_cars' => 'favorite_cars#create' 
+  post '/favorite_cars/:car_id' => 'favorite_cars#create' 
   delete '/favorite_cars/:id' => 'favorite_cars#destroy'
 
   get '/car_upload' => 'google_vision#upload_car'
