@@ -31,13 +31,26 @@ input, input[type="text"] {
   }
 }
 
-#footer {
-  .footer {
-    .grey-bg{
-      .thing-smaller{
-        padding-top: 200px;
-        padding-bottom: 200px;
-      }
-    }
-  }
+.social, .mb-60 {
+  padding-top: 60px;
+  margin-bottom: 0px !important;
+}
+
+.section-padding {
+  padding-top: 60px;
+  padding-bottom: 0;
+}
+
+.footer {
+  margin-top: 70px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#footer-bottom {
+  margin-top: 50px;
+}
+
+#main-content {
+  min-height: 300px;
 }

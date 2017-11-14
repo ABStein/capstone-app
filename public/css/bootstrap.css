@@ -9330,10 +9330,6 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 
 .text-center {
     text-align: center !important;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    padding-left: 200;
-    padding-right: 200px;
 }
 
 @media (min-width: 576px) {

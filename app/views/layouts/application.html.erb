@@ -150,22 +150,25 @@
             <%= message %> 
         </div>
         <% end %>
-
-        <%= yield %>
+       <div class="container" id="main-content">
+            <%= yield %>
+        </div>
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="">
 
             <!-- Portfolio -->
-            <div class="container">
+ <!--            <div class="container">
                 <div class="rows portfolio-grid gallery-popup">
 
 
+    </div> -->
+    <!-- End Page Wraper -->
         <!-- Footer Section -->
         <footer id="footer" class="footer gray-bg thing-smaller">
         <!-- Contact Infobar Section -->
         <section id="contact-us" class="section-padding text-center">
-            <div class="container">
+            <!-- <div class="container"> -->
                 <div class="row">
                     <div class="col-md-4 col-sm-6 mb-sm-30">
                         <div class="contact-info">
@@ -196,11 +199,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </section>
         <!-- End Contact Infobar Section -->
-            <div class="container text-center">
-                <ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
+            <div class="container text-center" id="footer-bottom">
+<!--                 <ul class="social mb-60 wow fadeInUp" data-wow-duration="1.5s">
                     <li>
                         <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
                     </li>
@@ -213,17 +216,13 @@
                     <li>
                         <a target="_blank" href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a>
                     </li>
-                </ul>
+                </ul> -->
                 <p class="copyright">
                     <a class="copy-link scroll-top" href="">&copy; CarSaavy 2017</a><br/>
                 </p>
             </div>
         </footer>
         <!-- End Footer Section -->
-
-    </div>
-    <!-- End Page Wraper -->
-
 
 </body>
 </html>
