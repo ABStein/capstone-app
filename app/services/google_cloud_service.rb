@@ -88,9 +88,6 @@ class GoogleCloudService
     split_car_names = potential_car_names.map { |potential_car_name| potential_car_name.split }
     official_car_names = split_car_names.flatten
     api_data_keywords = official_car_names.uniq.map {|word| word.titleize }
-    # db_makes = Car.pluck(:make)
-    # found_db_makes = api_data_keywords & db_makes # this returns an array of strings that are makes in the db
-    # car_query = found_db_makes.map { |found_db_make| Car.where(make: found_db_make ) }
 
     cars = Car.where(make: api_data_keywords, model: api_data_keywords)
     cars_with_year = cars.where(year: api_data_keywords)
@@ -102,3 +99,6 @@ class GoogleCloudService
     end
   end
 end
+    # db_makes = Car.pluck(:make)
+    # found_db_makes = api_data_keywords & db_makes # this returns an array of strings that are makes in the db
+    # car_query = found_db_makes.map { |found_db_make| Car.where(make: found_db_make ) }
