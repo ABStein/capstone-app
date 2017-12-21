@@ -1,5 +1,7 @@
 {
   "name": "capstone-app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "react-native-uploader": "0.0.10"
+  }
 }
