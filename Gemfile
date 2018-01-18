@@ -30,6 +30,8 @@ gem "font-awesome-rails"
 gem 'figaro'
 gem 'unirest', '~> 1.1.2'
 gem "google-cloud-vision"
+gem "paperclip", "~> 5.0.0"
+gem 'devise'
 
 gem 'seed_dump'
 

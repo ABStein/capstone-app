@@ -6,9 +6,7 @@ class GoogleVisionController < ApplicationController
 
 
   def process_image 
-    if params[:image_link].present?
-    #   @results = GoogleCloudService.image_to_cars(params[:image_link], 'link')
-    # else 
+    if params[:image_link].present? 
       image_file = File.open(params[:image_file])
       @results = GoogleCloudService.send_image(image_file, 'file')
     end
