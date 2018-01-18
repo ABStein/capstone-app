@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+CarSaavy is intended to be a car information app to help a user get information on a car just from a picture and help make the buying process a little easier. This app will then identify what car that picture is showing based on cars that are in the database between the years of 2015 and 2018.   
