@@ -31,6 +31,7 @@ gem 'figaro'
 gem 'unirest', '~> 1.1.2'
 gem "google-cloud-vision"
 
+
 gem 'seed_dump'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
